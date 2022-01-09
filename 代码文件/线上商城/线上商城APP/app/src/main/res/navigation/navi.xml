@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi"
+    app:startDestination="@id/navi_shop">
+
+    <fragment
+        android:id="@+id/navi_shop"
+        android:name="com.example.market.shop"
+        android:label="@string/navi_shop"
+        tools:layout="@layout/fragment_shop" >
+        <action
+            android:id="@+id/action_navi_shop_to_navi_good"
+            app:destination="@id/navi_good"
+            app:popUpTo="@id/navi_shop">
+            <argument
+                android:name="ID"
+                android:defaultValue="-1" />
+        </action>
+    </fragment>
+    <activity
+        android:id="@+id/navi_mainActivity"
+        android:name="com.example.market.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/navi_cart"
+        android:name="com.example.market.cart"
+        android:label="@string/navi_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/navi_history"
+        android:name="com.example.market.history"
+        android:label="@string/navi_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_navi_history_to_navi_order"
+            app:destination="@id/navi_order"
+            app:popUpTo="@id/navi_history" >
+            <argument
+                android:name="ID"
+                android:defaultValue="-1" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navi_my"
+        android:name="com.example.market.my"
+        android:label="@string/navi_my"
+        tools:layout="@layout/fragment_my" />
+    <fragment
+        android:id="@+id/navi_good"
+        android:name="com.example.market.good"
+        android:label="商品信息"
+        tools:layout="@layout/fragment_good">
+        <argument
+            android:name="ID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/navi_order"
+        android:name="com.example.market.order"
+        android:label="订单信息"
+        tools:layout="@layout/fragment_order">
+        <argument
+            android:name="ID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+</navigation>

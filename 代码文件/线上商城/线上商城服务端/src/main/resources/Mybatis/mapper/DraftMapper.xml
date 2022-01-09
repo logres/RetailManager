@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.phoneproject.provider.mapper.DraftMapper">
+
+    <insert id="insertDraft" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.phoneproject.api.entity.Draft">
+        INSERT INTO `draft`(`customer_id`,`user_id`,`status`) value(#{customerId},#{userId},#{status})
+    </insert>
+
+    <delete id="deleteDraft" parameterType="Integer">
+        DELETE FROM `draft` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findDraftById" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.Draft">
+        SELECT * FROM `draft` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllDraft" resultType="com.hit.logres.phoneproject.api.entity.Draft">
+        SELECT * FROM `draft`
+    </select>
+
+    <update id="updateDraft" parameterType="com.hit.logres.phoneproject.api.entity.Draft">
+        UPDATE `draft` SET `customer_id`=#{customerId},`user_id`=#{userId}, `status`=#{status} WHERE `id`=#{id}
+    </update>
+</mapper>

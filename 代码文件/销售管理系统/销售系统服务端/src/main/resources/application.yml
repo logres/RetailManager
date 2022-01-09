@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/supermarketVI?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true
+    username: root
+    password: 123
+    #schema: classpath:Sql/supermarket.sql
+
+mybatis:
+  config-location: classpath:Mybatis/mybatis-config.xml
+  mapper-locations: classpath:Mybatis/mapper/*Mapper.xml
+  type-aliases-package: com.hit.logres.api.entity.*
+
+##dubbo 注册到注册中心的名称
+dubbo:
+  application:
+    id: logres-provider
+    name: logres-provider
+  scan:
+    basePackages: com.hit.logres.provider.serviceimplemet
+
+  ##采用协议方式和端口号
+  protocol:
+    ## 常用协议：dubbo,http,webService等
+    id: dubbo
+    name: dubbo
+    host: 0.0.0.0
+    ## 发布dubbo端口号为20880
+    port: 28888
+    status: server
+  registry:
+    ## dubbo注册中心地址 zookeeper地址
+#    address: zookeeper://45.76.25.199:7771
+    address: N/A
+    timeout: 1000000
+  config-center:
+    timeout: 1000000
+# ## 实现类扫包范围(可以省略，dubbo会自动扫 带了@Service的类)
+
+

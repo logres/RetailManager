@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.phoneproject.provider.mapper.WarehouseMapper">
+
+    <insert id="insertWarehouse" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.phoneproject.api.entity.Warehouse">
+        INSERT INTO `warehouse`(`name`,`address`) value(#{name},#{address})
+    </insert>
+
+    <delete id="deleteWarehouse" parameterType="Integer">
+        DELETE FROM `warehouse` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findWarehouseById" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.Warehouse">
+        SELECT * FROM `warehouse` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllWarehouse" resultType="com.hit.logres.phoneproject.api.entity.Warehouse">
+        SELECT * FROM `warehouse`
+    </select>
+
+    <update id="updateWarehouse" parameterType="com.hit.logres.phoneproject.api.entity.Warehouse">
+        UPDATE `warehouse` SET `name`=#{name},`address`=#{address} where `id` =#{id}
+    </update>
+
+    <select id="findWarehouseByName" parameterType="String" resultType="com.hit.logres.phoneproject.api.entity.Warehouse">
+        SELECT * FROM `warehouse` WHERE `name` = #{name}
+    </select>
+</mapper>

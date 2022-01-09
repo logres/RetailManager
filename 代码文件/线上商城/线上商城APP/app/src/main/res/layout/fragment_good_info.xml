@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".goodInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3pt"
+        android:background="@drawable/shape_corner"
+        android:orientation="horizontal"
+        android:paddingStart="5pt"
+        android:paddingTop="5pt"
+        android:paddingEnd="5pt"
+        android:paddingBottom="5pt">
+
+        <ImageView
+            android:id="@+id/good_info_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:srcCompat="@drawable/image_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/good_info_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5pt"
+                android:text="商品名"
+                android:textColor="@color/dark_gray"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/good_info_info"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:paddingStart="5pt"
+                android:text="备注"
+                android:textColor="@color/gray"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/good_info_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="商品价格"
+                android:textAlignment="textEnd"
+                android:textColor="@color/dark_gray"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

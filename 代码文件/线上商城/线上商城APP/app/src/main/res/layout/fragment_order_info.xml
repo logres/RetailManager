@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".orderInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3pt"
+        android:background="@drawable/shape_corner"
+        android:orientation="horizontal"
+        android:paddingStart="5pt"
+        android:paddingTop="5pt"
+        android:paddingEnd="5pt"
+        android:paddingBottom="5pt">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/order_info_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5pt"
+                android:text="订单时间"
+                android:textColor="@color/dark_gray"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/order_info_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5pt"
+                android:text="订单号"
+                android:textColor="@color/gray"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/order_info_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="总价格 "
+                android:textAlignment="textEnd"
+                android:textColor="@color/dark_gray"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

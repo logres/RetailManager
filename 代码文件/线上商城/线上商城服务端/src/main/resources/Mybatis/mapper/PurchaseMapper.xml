@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.phoneproject.provider.mapper.PurchaseMapper">
+
+    <insert id="insertPurchase" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.phoneproject.api.entity.Purchase">
+        INSERT INTO `purchase`(`good_id`,`warehouse_id`,`price`,`amount`,`supplier`,`time`) value(#{goodId},#{warehouseId},#{price},#{amount},#{supplier},#{time})
+    </insert>
+
+    <delete id="deletePurchase" parameterType="Integer">
+        DELETE FROM `purchase` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findPurchaseById" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.Purchase">
+        SELECT * FROM `purchase` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllPurchase" resultType="com.hit.logres.phoneproject.api.entity.Purchase">
+        SELECT * FROM `purchase`
+    </select>
+
+    <update id="updatePurchase" parameterType="com.hit.logres.phoneproject.api.entity.Purchase">
+        UPDATE `purchase` SET `good_id`=#{goodId},`warehouse_id`=#{warehouseId},`price`=#{price},`amount`=#{amount},`supplier`=#{supplier},`time`=#{time} where id=#{id}
+    </update>
+</mapper>

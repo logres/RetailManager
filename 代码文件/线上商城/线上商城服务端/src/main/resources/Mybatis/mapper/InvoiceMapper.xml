@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.phoneproject.provider.mapper.InvoiceMapper">
+
+    <insert id="insertInvoice" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.phoneproject.api.entity.Invoice">
+        INSERT INTO `invoice`(`customer_id`,`time`,`total_price`,`status`,`gross_margin`,`user_id`) value(#{customerId},#{time},#{totalPrice},#{status},#{grossMargin},#{userId})
+    </insert>
+
+    <delete id="deleteInvoice" parameterType="Integer">
+        DELETE FROM `invoice` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findInvoiceById" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.Invoice">
+        SELECT * FROM `invoice` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllInvoice" resultType="com.hit.logres.phoneproject.api.entity.Invoice">
+        SELECT * FROM `invoice`
+    </select>
+
+    <update id="updateInvoice" parameterType="com.hit.logres.phoneproject.api.entity.Invoice">
+        UPDATE `invoice` SET `customer_id`=#{customerId},`time`=#{time},`total_price`=#{totalPrice},`status`=#{status},`gross_margin`=#{grossMargin},`user_id`=#{userId} where id=#{id}
+    </update>
+
+    <select id="findInvoiceByUserId" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.Invoice">
+        SELECT * FROM `invoice` WHERE `user_id` = #{userId}
+    </select>
+
+    <select id="findInvoiceByCustomerId" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.Invoice">
+        SELECT * FROM `invoice` WHERE `customer_id` = #{customerId}
+    </select>
+
+    <select id="findInvoiceByTimestamp" resultType="com.hit.logres.phoneproject.api.entity.Invoice">
+        SELECT * FROM `invoice` WHERE `time`>=#{start} AND `time` &lt; #{end}
+    </select>
+
+</mapper>

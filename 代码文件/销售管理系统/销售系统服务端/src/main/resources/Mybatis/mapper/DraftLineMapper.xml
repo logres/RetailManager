@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.provider.mapper.DraftLineMapper">
+
+    <insert id="insertDraftLine" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.api.entity.DraftLine">
+        INSERT INTO `draftline`(`draft_id`,`good_id`,`warehouse_id`,`amount`,`unit_price`) value(#{draftId},#{goodId},#{warehouseId},#{amount},#{unitPrice})
+    </insert>
+
+    <delete id="deleteDraftLine" parameterType="Integer">
+        DELETE FROM `draftline` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findDraftLineById" parameterType="Integer" resultType="com.hit.logres.api.entity.DraftLine">
+        SELECT * FROM `draftline` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllDraftLine" resultType="com.hit.logres.api.entity.DraftLine">
+        SELECT * FROM `draftline`
+    </select>
+
+    <update id="updateDraftLine" parameterType="com.hit.logres.api.entity.DraftLine">
+        UPDATE `draftline` SET `draft_id`=#{draftId},`good_id`=#{goodId},`warehouse_id`=#{warehouseId},`amount`=#{amount}, `unit_price` = #{unitPrice} WHERE `id` =#{id}
+    </update>
+
+    <select id="findDraftLineByDraftId" parameterType="Integer" resultType="com.hit.logres.api.entity.DraftLine">
+        SELECT * FROM `draftline` WHERE `draft_id`=#{id}
+    </select>
+</mapper>

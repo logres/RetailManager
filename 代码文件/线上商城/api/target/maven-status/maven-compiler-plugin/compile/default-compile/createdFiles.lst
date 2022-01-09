@@ -1,0 +1,14 @@
+com\hit\logres\phoneproject\api\entity\Customer.class
+com\hit\logres\phoneproject\api\entity\Warehouse.class
+com\hit\logres\phoneproject\api\entity\User.class
+com\hit\logres\phoneproject\api\entity\Invoice.class
+com\hit\logres\phoneproject\api\entity\ShoppingCartLine.class
+com\hit\logres\phoneproject\api\entity\Good.class
+com\hit\logres\phoneproject\api\entity\Payment.class
+com\hit\logres\phoneproject\api\entity\InvoiceLine.class
+com\hit\logres\phoneproject\api\entity\DraftLine.class
+com\hit\logres\phoneproject\api\entity\Purchase.class
+com\hit\logres\phoneproject\api\entity\Draft.class
+com\hit\logres\phoneproject\api\entity\Inventory.class
+com\hit\logres\phoneproject\api\entity\NetCustomer.class
+com\hit\logres\phoneproject\api\entity\ShoppingCart.class

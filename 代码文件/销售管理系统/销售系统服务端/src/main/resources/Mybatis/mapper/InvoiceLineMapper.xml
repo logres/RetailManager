@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.provider.mapper.InvoiceLineMapper">
+
+    <insert id="insertInvoiceLine" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.api.entity.InvoiceLine">
+        INSERT INTO `invoiceline`(`invoice_id`,`good_id`,`warehouse_id`,`amount`,`unit_price`) value(#{invoiceId},#{goodId},#{warehouseId},#{amount},#{unitPrice})
+    </insert>
+
+    <delete id="deleteInvoiceLine" parameterType="Integer">
+        DELETE FROM `invoiceline` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findInvoiceLineById" parameterType="Integer" resultType="com.hit.logres.api.entity.InvoiceLine">
+        SELECT * FROM `invoiceline` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllInvoiceLine" resultType="com.hit.logres.api.entity.InvoiceLine">
+        SELECT * FROM `invoiceline`
+    </select>
+
+    <update id="updateInvoiceLine" parameterType="com.hit.logres.api.entity.InvoiceLine">
+        UPDATE `invoiceline` SET `invoice_id`=#{invoiceId},`good_id`=#{goodId},`ware_house`=#{warehouseId},`amount`=#{amount}, `unit_price`=#{unitPrice} where id=#{id}
+    </update>
+
+    <select id="findInvoiceLineByInvoiceId" parameterType="Integer" resultType="com.hit.logres.api.entity.InvoiceLine">
+        SELECT * FROM `invoiceline` WHERE `invoice_id`=#{invoiceId}
+    </select>
+
+    <select id="findInvoiceLineByGoodId" parameterType="Integer" resultType="com.hit.logres.api.entity.InvoiceLine">
+        SELECT * FROM `invoiceline` WHERE `good_id`=#{goodId}
+    </select>
+</mapper>

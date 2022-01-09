@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.provider.mapper.GoodMapper">
+
+    <insert id="insertGood" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.api.entity.Good">
+        INSERT INTO `good`(`name`,`state`,`priceA`,`priceB`,`priceC`,`purchase_price`,`default_warehouse_id`,`info`,`barcode`) value(#{name},#{state},#{priceA},#{priceB},#{priceC},#{purchasePrice},#{defaultWarehouseId},#{info},#{barcode})
+    </insert>
+
+    <delete id="deleteGood" parameterType="Integer">
+        DELETE FROM `good` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findGoodById" parameterType="int" resultType="com.hit.logres.api.entity.Good">
+        SELECT * FROM `good` WHERE id=#{id}
+    </select>
+
+    <select id="getAllGood" resultType="com.hit.logres.api.entity.Good">
+        SELECT * FROM `good`
+    </select>
+
+    <update id="updateGood" parameterType="com.hit.logres.api.entity.Good">
+        UPDATE `good` SET `name`=#{name},`state`=#{state},`priceA`=#{priceA},`priceB`=#{priceB},`priceC`=#{priceC},`purchase_price`=#{purchasePrice},`default_warehouse_id`=#{defaultWarehouseId},`info`=#{info},`barcode`=#{barcode} WHERE `id`=#{id}
+    </update>
+
+    <select id="findGoodByName" parameterType="String" resultType="com.hit.logres.api.entity.Good">
+        SELECT * FROM `good` WHERE `name` = #{name}
+    </select>
+</mapper>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="butReturn"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout10"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="3pt"
+                android:background="@drawable/window"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="7dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:padding="30dp"
+                        android:src="@drawable/head"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayout14"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout14"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="3pt"
+                            android:layout_marginStart="3pt"
+                            android:layout_marginEnd="3pt"
+                            android:background="@color/dark_gray" />
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="match_parent"
+                            android:layout_height="3pt"
+                            android:layout_marginStart="3pt"
+                            android:layout_marginEnd="3pt" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5pt"
+                            android:layout_marginRight="5pt"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="30pt"
+                                android:layout_height="wrap_content"
+                                android:text="地址"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/register_addr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5pt"
+                            android:layout_marginRight="5pt"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="30pt"
+                                android:layout_height="wrap_content"
+                                android:text="电话"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/register_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="number" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="5pt"
+                            android:layout_marginRight="5pt"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="30pt"
+                                android:layout_height="wrap_content"
+                                android:text="姓名"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/register_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:background="@drawable/window"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout13"
+                tools:layout_editor_absoluteX="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="3pt"
+                    android:layout_marginStart="3pt"
+                    android:layout_marginEnd="3pt" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="3pt"
+                    android:layout_marginStart="3pt"
+                    android:layout_marginEnd="3pt"
+                    android:background="@color/dark_gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="3pt"
+                    android:layout_marginStart="3pt"
+                    android:layout_marginEnd="3pt" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="5pt"
+                    android:layout_marginRight="5pt"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="关联ID"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/register_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:background="@drawable/window"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
+                tools:layout_editor_absoluteX="7dp">
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="match_parent"
+                    android:layout_height="3pt"
+                    android:layout_marginStart="3pt"
+                    android:layout_marginEnd="3pt" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="match_parent"
+                    android:layout_height="3pt"
+                    android:layout_marginStart="3pt"
+                    android:layout_marginEnd="3pt"
+                    android:background="@color/dark_gray" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="match_parent"
+                    android:layout_height="3pt"
+                    android:layout_marginStart="3pt"
+                    android:layout_marginEnd="3pt" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="5pt"
+                    android:layout_marginRight="5pt"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="30pt"
+                        android:layout_height="wrap_content"
+                        android:text="账号"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/register_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="5pt"
+                    android:layout_marginRight="5pt"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="30pt"
+                        android:layout_height="wrap_content"
+                        android:text="密码"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/register_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3pt"
+                android:background="@drawable/window"
+                android:orientation="horizontal"
+                android:padding="2pt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="7dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttom_0"
+                    android:onClick="butReturn"
+                    android:text="返回"
+                    android:textAlignment="center"
+                    android:textColor="@color/pale_white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="5pt"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttom_0"
+                    android:onClick="butRegister"
+                    android:text="注册"
+                    android:textAlignment="center"
+                    android:textColor="@color/pale_white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

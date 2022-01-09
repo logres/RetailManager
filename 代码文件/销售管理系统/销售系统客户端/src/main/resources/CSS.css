@@ -1,0 +1,158 @@
+/*.root {
+
+
+	-fx-disabled-opacity: 0.6;
+	-fx-text-fill: -fx-text-base-color;
+
+	paper-white: #fcfcfc;
+    carboard-grey: #eff0f1;
+    icon-grey: #4d4d4d;
+    charcoal-grey: #31363b;
+    shade-black: #232629;
+    plasma-blue: #3daee9;
+
+    icon-red: #da4453;
+    danger-red: #ed1515;
+    icon-orange: #f47750;
+    beware-orange: #f67400;
+    icon-yellow: #fdbc4b;
+    sunbeam-yellow: #c9ce3b;
+    mellow-turquoise: #1cdc9a;
+    icon-green: #2ecc71;
+    verdant-green: #11d116;
+    icon-blue: #1d99f3;
+
+
+    light-gray: #f3f4f5;
+    regular-gray: #bdc3c7;
+    dark-gray: #76787d;
+    regular-blue: #3daee9;
+    light-blue: #93cee9;
+
+    button-outline-gray: #b1b0b2;
+    tracks: #babbbe;
+
+   -fx-shadow-highlight-color: carboard-grey;
+}*/
+
+.button {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border-color, -fx-inner-border-color, light-gray;
+    -fx-background-insets: 0px -1px -1px 0px, 0px, 0px, 1px;
+    -fx-background-radius: 3px, 2px, 2px, 1px;
+}
+.button:hover {
+    -fx-background-color: -fx-shadow-highlight-color, regular-gray, regular-gray, -fx-body-color;
+}
+
+.button:armed {
+    -fx-background-color: regular-gray, regular-gray, regular-gray, regular-gray;
+}
+
+
+/**** Scrollbar ****/
+
+.scroll-bar {
+    /*-fx-background-color: #888888;*/
+    -fx-background-color:transparent;
+}
+.scroll-bar > .thumb {
+    -fx-background-color: #888888;
+    /*-fx-background-radius: 5em;*/
+    /*-fx-background-insets: 0.23em;*/
+}
+/*
+.text-area,
+.text-field {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border-color, -fx-inner-border-color, paper-white;
+    -fx-background-insets: 0px -1px -1px 0px, 0px, 0px, 1px;
+    -fx-background-radius: 3px, 2px, 2px, 1px;
+}
+.text-area:hover,
+.text-field:hover {
+    -fx-background-color: light-blue, light-blue, light-blue, paper-white;
+}*/
+
+
+/*tabpane背景色*/
+.tab-header-background{
+    -fx-background-color: #555555;
+}
+
+
+/*tabpane下横线*/
+.jfx-tab-pane .tab-selected-line {
+    -fx-background-color: #e6e6e6;
+}
+
+
+/*标签颜色*/
+.tab-label {
+    -fx-text-fill: #e6e6e6;
+}
+
+.scroll-pane{
+    -fx-background-color:transparent;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.jfx-combo-box {
+    -fx-prompt-text-fill: #555555;
+    /*-fx-font-family: 'Roboto Medium';*/
+    /*-fx-font-style: 'bold';*/
+    -fx-font-size: 14px;
+}
+
+.jfx-text-field {
+    -fx-font-size: 14px;
+    /*-fx-font-family: 'Roboto Medium';*/
+    -fx-font-style: 'Regular';
+    -fx-text-fill: #5555555;
+}
+
+.jfx-text-area {
+    -fx-font-size: 14px;
+    /*-fx-font-family: 'Roboto Medium';*/
+    -fx-font-style: 'Regular';
+    -fx-text-fill: #5555555;
+}
+
+.jfx-text-area:disabled,
+.jfx-text-field:disabled,
+.scroll-pane:disabled,
+.jfx-combo-box:disabled{
+    -fx-opacity: 0.95;
+}
+
+VBox{
+    -fx-spacing: 3px;
+    -fx-text-fill: #000000;
+}
+
+.window {
+    -fx-background-color: rgba(230, 230, 230, 0.95);
+}
+/*
+.tab *.tab-label {
+    -fx-rotate: 90;
+}*/
+
+.left-tab *.tab-label {
+    -fx-rotate: 90;
+    -fx-alignment: center-left;
+    -fx-text-alignment: left;
+}
+
+.left-tab {
+    -fx-tab-max-height: 10px;
+    -fx-tab-max-width: 40px;
+    -fx-tab-min-width: 40px;
+}
+/*
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-radius: 0px;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-color: #4d1a4dff;
+}*/

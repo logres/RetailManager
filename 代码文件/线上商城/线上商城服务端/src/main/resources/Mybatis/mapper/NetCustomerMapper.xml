@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.phoneproject.provider.mapper.NetCustomerMapper">
+
+    <insert id="insertNetCustomer" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.phoneproject.api.entity.NetCustomer">
+        INSERT INTO `netcustomer`(`customer_id`,`username`,`password`) value(#{customerId},#{username},#{password})
+    </insert>
+
+    <delete id="deleteCustomer" parameterType="Integer">
+        DELETE FROM `netcustomer` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findNetCustomerById" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.NetCustomer">
+        SELECT * FROM `netcustomer` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllNetCustomer" resultType="com.hit.logres.phoneproject.api.entity.NetCustomer">
+        SELECT * FROM `netcustomer`
+    </select>
+
+    <update id="updateNetCustomer" parameterType="com.hit.logres.phoneproject.api.entity.NetCustomer">
+        UPDATE `netcustomer` SET `customer_id`=#{customerId},`username`=#{username},`password`=#{password} WHERE `id`=#{id}
+    </update>
+
+    <select id="findNetCustomerByUsername" parameterType="String" resultType="com.hit.logres.phoneproject.api.entity.NetCustomer">
+        SELECT * FROM `netcustomer` WHERE `username` = #{username}
+    </select>
+</mapper>
+

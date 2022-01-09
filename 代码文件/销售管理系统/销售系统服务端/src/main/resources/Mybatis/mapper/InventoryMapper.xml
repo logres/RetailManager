@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.provider.mapper.InventoryMapper">
+
+    <insert id="insertInventory" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.api.entity.Inventory">
+        INSERT INTO `inventory`(`warehouse_id`,`good_id`,`amount`,`info`) value(#{warehouseId},#{goodId},#{amount},#{info})
+    </insert>
+
+    <delete id="deleteInventory" parameterType="Integer">
+        DELETE FROM `inventory` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findInventoryById" parameterType="Integer" resultType="com.hit.logres.api.entity.Inventory">
+        SELECT * FROM `inventory` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllInventory" resultType="com.hit.logres.api.entity.Inventory">
+        SELECT * FROM `inventory`
+    </select>
+
+    <update id="updateInventory" parameterType="com.hit.logres.api.entity.Inventory">
+        UPDATE `inventory` SET `warehouse_id`=#{warehouseId},`good_id`=#{goodId},`amount`=#{amount},`info` = #{info} WHERE `id` =#{id}
+    </update>
+    
+    <select id="findInventoryByWarehouseId" parameterType="Integer" resultType="com.hit.logres.api.entity.Inventory">
+        SELECT * FROM `inventory` WHERE `warehouse_id` = #{id}
+    </select>
+</mapper>

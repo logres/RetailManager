@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.phoneproject.provider.mapper.UserMapper">
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.phoneproject.api.entity.User">
+        INSERT INTO `user`(`authority`,`password`,`username`,`name`,`phone_number`,`gender`) value(#{authority},#{password},#{username},#{name},#{phoneNumber},#{gender})
+    </insert>
+
+    <delete id="deleteUser" parameterType="Integer">
+        DELETE FROM `user` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findUserById" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.User">
+        SELECT * FROM `user` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllUser" resultType="com.hit.logres.phoneproject.api.entity.User">
+        SELECT * FROM `user`
+    </select>
+
+    <update id="updateUser" parameterType="com.hit.logres.phoneproject.api.entity.User">
+        UPDATE `user` SET `authority`=#{authority},`password`=#{password},`username`=#{username},`name`=#{name},`phone_number`=#{phoneNumber}, `gender`=#{gender} where id=#{id}
+    </update>
+
+    <select id="findUserByName" parameterType="String" resultType="com.hit.logres.phoneproject.api.entity.User">
+        SELECT * FROM `user` WHERE `username` = #{name}
+    </select>
+</mapper>

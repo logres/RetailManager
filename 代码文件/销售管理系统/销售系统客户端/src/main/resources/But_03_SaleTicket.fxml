@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.text.Font?>
+
+<JFXButton fx:id="button" maxHeight="27.0" minHeight="27.0" onAction="#butHandler" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: #888888; -fx-text-fill: #e6e6e6;" text=" " xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hit.logres.consumer.panel.But_03_Controller">
+   <font>
+      <Font name="System Bold" size="14.0" />
+   </font>
+</JFXButton>

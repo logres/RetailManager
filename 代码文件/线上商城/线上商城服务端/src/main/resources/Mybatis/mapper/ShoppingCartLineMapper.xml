@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.phoneproject.provider.mapper.ShoppingCartLineMapper">
+
+    <insert id="insertShoppingCartLine" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.phoneproject.api.entity.ShoppingCartLine">
+        INSERT INTO `shoppingcartline`(`shoppingcart_id`,`good_id`,`amount`,`unit_price`) value(#{shoppingCartId},#{goodId},#{amount},#{unitPrice})
+    </insert>
+
+    <delete id="deleteShoppingCartLine" parameterType="Integer">
+        DELETE FROM `shoppingcartline` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findShoppingCartLineById" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.ShoppingCartLine">
+        SELECT * FROM `shoppingcartline` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllShoppingCartLine" resultType="com.hit.logres.phoneproject.api.entity.ShoppingCartLine">
+        SELECT * FROM `shoppingcartline`
+    </select>
+
+    <update id="updateShoppingCartLine" parameterType="com.hit.logres.phoneproject.api.entity.ShoppingCartLine">
+        UPDATE `shoppingcartline` SET `shoppingcart_id`=#{shoppingCartId},`good_id`=#{goodId},`unit_price`=#{unitPrice}, `amount`=#{amount} where id=#{id}
+    </update>
+
+    <select id="findShoppingCartLineByShoppingCartId" parameterType="Integer" resultType="com.hit.logres.phoneproject.api.entity.ShoppingCartLine">
+        SELECT * FROM `shoppingcartline` WHERE `shoppingcart_id`=#{shoppingcartId}
+    </select>
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.provider.mapper.PaymentMapper">
+
+    <insert id="insertPayment" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.api.entity.Payment">
+        INSERT INTO `payment`(`invoice_id`,`amount`,`time`) value(#{invoiceId},#{amount},#{time})
+    </insert>
+
+    <delete id="deletePayment" parameterType="Integer">
+        DELETE FROM `payment` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findPaymentById" parameterType="Integer" resultType="com.hit.logres.api.entity.Payment">
+        SELECT * FROM `payment` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllPayment" resultType="com.hit.logres.api.entity.Payment">
+        SELECT * FROM `payment`
+    </select>
+
+    <update id="updatePayment" parameterType="com.hit.logres.api.entity.Payment">
+        UPDATE `payment` SET `invoice_id`=#{invoiceId},`amount`=#{amount},`time`=#{time} where id=#{id}
+    </update>
+
+    <select id="findPaymentByInvoiceId" parameterType="Integer" resultType="com.hit.logres.api.entity.Payment">
+        SELECT * FROM `payment` WHERE `invoice_id`=#{id}
+    </select>
+</mapper>

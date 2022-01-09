@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- mapper代码,namespace有特殊的意义 -->
+<mapper namespace="com.hit.logres.provider.mapper.CustomerMapper">
+
+    <insert id="insertCustomer" useGeneratedKeys="true" keyProperty="id" parameterType="com.hit.logres.api.entity.Customer">
+        INSERT INTO `customer`(`name`,`phone`,`address`,`type`, `info`) value(#{name},#{phone},#{address},#{type},#{info})
+    </insert>
+
+    <delete id="deleteCustomer" parameterType="Integer">
+        DELETE FROM `customer` WHERE `id` = #{id}
+    </delete>
+
+    <select id="findCustomerById" parameterType="Integer" resultType="com.hit.logres.api.entity.Customer">
+        SELECT * FROM `customer` WHERE `id` = #{id}
+    </select>
+
+    <select id="getAllCustomer" resultType="com.hit.logres.api.entity.Customer">
+        SELECT * FROM `customer`
+    </select>
+
+    <update id="updateCustomer" parameterType="com.hit.logres.api.entity.Customer">
+        UPDATE `customer` SET `name`=#{name},`phone`=#{phone},`address`=#{address},`type`=#{type} ,`info` = #{info} WHERE `id`=#{id}
+    </update>
+
+    <select id="findCustomerByName" parameterType="String" resultType="com.hit.logres.api.entity.Customer">
+        SELECT * FROM `customer` WHERE `name` = #{name}
+    </select>
+</mapper>
+
